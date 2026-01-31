@@ -1,4 +1,8 @@
 body{
-    background: red;
+    background: rgb(70, 42, 171);
 
+}
+.title-1{
+    color: blue;
+    font-size: 50px;
 }

@@ -1,0 +1,24 @@
+body{
+    background: #76B952;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.main-box{
+    background: white;
+}
+input{
+    background: #f2f2f2 !important;
+}
+
+.login-btn{
+    background: #76B952;
+    color: white;
+}
+
+.main-box {
+    --webkit-box-shadow: inset 0px 0px 6px 0px #000000; 
+box-shadow: inset 0px 0px 6px 0px #000000;
+}
