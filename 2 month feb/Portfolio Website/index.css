@@ -62,3 +62,13 @@ body {
     align-items: center;
     padding: 15px;
 }
+
+.project-card {
+    text-align: left;
+   
+}
+
+.py-5 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+}
