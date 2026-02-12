@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css'
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
+import { Button } from 'bootstrap';
 
 function App() {
 
@@ -88,10 +89,12 @@ function App() {
 
         </header>
         <div className='container-fluid'>
-          <div className='row'>
+          <div className='row h-100'>
             {/* side bar */}
             <div className='col-md 3 border'>
-              {/* <h2>side bar</h2> */}
+               <Button className="btn">
+                compose
+              </Button> 
             </div>
 
             {/* main content */}
