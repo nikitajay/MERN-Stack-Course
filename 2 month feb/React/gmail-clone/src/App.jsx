@@ -91,15 +91,304 @@ function App() {
         <div className='container-fluid'>
           <div className='row h-100'>
             {/* side bar */}
-            <div className='col-md 3 border'>
-               <Button className="btn">
-                compose
-              </Button> 
+            <div className='col-md-3 sidebar'>
+              <button className="btn compose-btn d-flex  gap-3 p-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="black"
+                  className="bi bi-pencil"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325" />
+                </svg>
+                Compose
+              </button>
+
+              <ul className='flex-column sidebar-nav'>
+                <li className='nav-item'>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-inbox" viewBox="0 0 16 16">
+                    <path d="M4.98 4a.5.5 0 0 0-.39.188L1.54 8H6a.5.5 0 0 1 .5.5 1.5 1.5 0 1 0 3 0A.5.5 0 0 1 10 8h4.46l-3.05-3.812A.5.5 0 0 0 11.02 4zm9.954 5H10.45a2.5 2.5 0 0 1-4.9 0H1.066l.32 2.562a.5.5 0 0 0 .497.438h12.234a.5.5 0 0 0 .496-.438zM3.809 3.563A1.5 1.5 0 0 1 4.981 3h6.038a1.5 1.5 0 0 1 1.172.563l3.7 4.625a.5.5 0 0 1 .105.374l-.39 3.124A1.5 1.5 0 0 1 14.117 13H1.883a1.5 1.5 0 0 1-1.489-1.314l-.39-3.124a.5.5 0 0 1 .106-.374z" />
+                  </svg>
+
+                  Inbox</li>
+                <li className='nav-item'>
+
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-inbox" viewBox="0 0 16 16">
+                    <path d="M4.98 4a.5.5 0 0 0-.39.188L1.54 8H6a.5.5 0 0 1 .5.5 1.5 1.5 0 1 0 3 0A.5.5 0 0 1 10 8h4.46l-3.05-3.812A.5.5 0 0 0 11.02 4zm9.954 5H10.45a2.5 2.5 0 0 1-4.9 0H1.066l.32 2.562a.5.5 0 0 0 .497.438h12.234a.5.5 0 0 0 .496-.438zM3.809 3.563A1.5 1.5 0 0 1 4.981 3h6.038a1.5 1.5 0 0 1 1.172.563l3.7 4.625a.5.5 0 0 1 .105.374l-.39 3.124A1.5 1.5 0 0 1 14.117 13H1.883a1.5 1.5 0 0 1-1.489-1.314l-.39-3.124a.5.5 0 0 1 .106-.374z" />
+                  </svg>
+                  Starred</li>
+                <li className='nav-item'>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-inbox" viewBox="0 0 16 16">
+                    <path d="M4.98 4a.5.5 0 0 0-.39.188L1.54 8H6a.5.5 0 0 1 .5.5 1.5 1.5 0 1 0 3 0A.5.5 0 0 1 10 8h4.46l-3.05-3.812A.5.5 0 0 0 11.02 4zm9.954 5H10.45a2.5 2.5 0 0 1-4.9 0H1.066l.32 2.562a.5.5 0 0 0 .497.438h12.234a.5.5 0 0 0 .496-.438zM3.809 3.563A1.5 1.5 0 0 1 4.981 3h6.038a1.5 1.5 0 0 1 1.172.563l3.7 4.625a.5.5 0 0 1 .105.374l-.39 3.124A1.5 1.5 0 0 1 14.117 13H1.883a1.5 1.5 0 0 1-1.489-1.314l-.39-3.124a.5.5 0 0 1 .106-.374z" />
+                  </svg>
+                  Snoozed</li>
+                <li className='nav-item'>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-inbox" viewBox="0 0 16 16">
+                    <path d="M4.98 4a.5.5 0 0 0-.39.188L1.54 8H6a.5.5 0 0 1 .5.5 1.5 1.5 0 1 0 3 0A.5.5 0 0 1 10 8h4.46l-3.05-3.812A.5.5 0 0 0 11.02 4zm9.954 5H10.45a2.5 2.5 0 0 1-4.9 0H1.066l.32 2.562a.5.5 0 0 0 .497.438h12.234a.5.5 0 0 0 .496-.438zM3.809 3.563A1.5 1.5 0 0 1 4.981 3h6.038a1.5 1.5 0 0 1 1.172.563l3.7 4.625a.5.5 0 0 1 .105.374l-.39 3.124A1.5 1.5 0 0 1 14.117 13H1.883a1.5 1.5 0 0 1-1.489-1.314l-.39-3.124a.5.5 0 0 1 .106-.374z" />
+                  </svg>
+                  Sent</li>
+                <li className='nav-item'>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-inbox" viewBox="0 0 16 16">
+                    <path d="M4.98 4a.5.5 0 0 0-.39.188L1.54 8H6a.5.5 0 0 1 .5.5 1.5 1.5 0 1 0 3 0A.5.5 0 0 1 10 8h4.46l-3.05-3.812A.5.5 0 0 0 11.02 4zm9.954 5H10.45a2.5 2.5 0 0 1-4.9 0H1.066l.32 2.562a.5.5 0 0 0 .497.438h12.234a.5.5 0 0 0 .496-.438zM3.809 3.563A1.5 1.5 0 0 1 4.981 3h6.038a1.5 1.5 0 0 1 1.172.563l3.7 4.625a.5.5 0 0 1 .105.374l-.39 3.124A1.5 1.5 0 0 1 14.117 13H1.883a1.5 1.5 0 0 1-1.489-1.314l-.39-3.124a.5.5 0 0 1 .106-.374z" />
+                  </svg>
+                  Drafts</li>
+                <li className='nav-item'>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-inbox" viewBox="0 0 16 16">
+                    <path d="M4.98 4a.5.5 0 0 0-.39.188L1.54 8H6a.5.5 0 0 1 .5.5 1.5 1.5 0 1 0 3 0A.5.5 0 0 1 10 8h4.46l-3.05-3.812A.5.5 0 0 0 11.02 4zm9.954 5H10.45a2.5 2.5 0 0 1-4.9 0H1.066l.32 2.562a.5.5 0 0 0 .497.438h12.234a.5.5 0 0 0 .496-.438zM3.809 3.563A1.5 1.5 0 0 1 4.981 3h6.038a1.5 1.5 0 0 1 1.172.563l3.7 4.625a.5.5 0 0 1 .105.374l-.39 3.124A1.5 1.5 0 0 1 14.117 13H1.883a1.5 1.5 0 0 1-1.489-1.314l-.39-3.124a.5.5 0 0 1 .106-.374z" />
+                  </svg>
+                  Purchases</li>
+                <li className='nav-item'>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-inbox" viewBox="0 0 16 16">
+                    <path d="M4.98 4a.5.5 0 0 0-.39.188L1.54 8H6a.5.5 0 0 1 .5.5 1.5 1.5 0 1 0 3 0A.5.5 0 0 1 10 8h4.46l-3.05-3.812A.5.5 0 0 0 11.02 4zm9.954 5H10.45a2.5 2.5 0 0 1-4.9 0H1.066l.32 2.562a.5.5 0 0 0 .497.438h12.234a.5.5 0 0 0 .496-.438zM3.809 3.563A1.5 1.5 0 0 1 4.981 3h6.038a1.5 1.5 0 0 1 1.172.563l3.7 4.625a.5.5 0 0 1 .105.374l-.39 3.124A1.5 1.5 0 0 1 14.117 13H1.883a1.5 1.5 0 0 1-1.489-1.314l-.39-3.124a.5.5 0 0 1 .106-.374z" />
+                  </svg>
+                  Travel</li>
+                <li className='nav-item'>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-inbox" viewBox="0 0 16 16">
+                    <path d="M4.98 4a.5.5 0 0 0-.39.188L1.54 8H6a.5.5 0 0 1 .5.5 1.5 1.5 0 1 0 3 0A.5.5 0 0 1 10 8h4.46l-3.05-3.812A.5.5 0 0 0 11.02 4zm9.954 5H10.45a2.5 2.5 0 0 1-4.9 0H1.066l.32 2.562a.5.5 0 0 0 .497.438h12.234a.5.5 0 0 0 .496-.438zM3.809 3.563A1.5 1.5 0 0 1 4.981 3h6.038a1.5 1.5 0 0 1 1.172.563l3.7 4.625a.5.5 0 0 1 .105.374l-.39 3.124A1.5 1.5 0 0 1 14.117 13H1.883a1.5 1.5 0 0 1-1.489-1.314l-.39-3.124a.5.5 0 0 1 .106-.374z" />
+                  </svg>
+                  Less</li>
+                <li className='nav-item'>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-inbox" viewBox="0 0 16 16">
+                    <path d="M4.98 4a.5.5 0 0 0-.39.188L1.54 8H6a.5.5 0 0 1 .5.5 1.5 1.5 0 1 0 3 0A.5.5 0 0 1 10 8h4.46l-3.05-3.812A.5.5 0 0 0 11.02 4zm9.954 5H10.45a2.5 2.5 0 0 1-4.9 0H1.066l.32 2.562a.5.5 0 0 0 .497.438h12.234a.5.5 0 0 0 .496-.438zM3.809 3.563A1.5 1.5 0 0 1 4.981 3h6.038a1.5 1.5 0 0 1 1.172.563l3.7 4.625a.5.5 0 0 1 .105.374l-.39 3.124A1.5 1.5 0 0 1 14.117 13H1.883a1.5 1.5 0 0 1-1.489-1.314l-.39-3.124a.5.5 0 0 1 .106-.374z" />
+                  </svg>
+                  Important</li>
+                <li className='nav-item'>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-inbox" viewBox="0 0 16 16">
+                    <path d="M4.98 4a.5.5 0 0 0-.39.188L1.54 8H6a.5.5 0 0 1 .5.5 1.5 1.5 0 1 0 3 0A.5.5 0 0 1 10 8h4.46l-3.05-3.812A.5.5 0 0 0 11.02 4zm9.954 5H10.45a2.5 2.5 0 0 1-4.9 0H1.066l.32 2.562a.5.5 0 0 0 .497.438h12.234a.5.5 0 0 0 .496-.438zM3.809 3.563A1.5 1.5 0 0 1 4.981 3h6.038a1.5 1.5 0 0 1 1.172.563l3.7 4.625a.5.5 0 0 1 .105.374l-.39 3.124A1.5 1.5 0 0 1 14.117 13H1.883a1.5 1.5 0 0 1-1.489-1.314l-.39-3.124a.5.5 0 0 1 .106-.374z" />
+                  </svg>
+                  Scheduled</li>
+                <li className='nav-item'>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-inbox" viewBox="0 0 16 16">
+                    <path d="M4.98 4a.5.5 0 0 0-.39.188L1.54 8H6a.5.5 0 0 1 .5.5 1.5 1.5 0 1 0 3 0A.5.5 0 0 1 10 8h4.46l-3.05-3.812A.5.5 0 0 0 11.02 4zm9.954 5H10.45a2.5 2.5 0 0 1-4.9 0H1.066l.32 2.562a.5.5 0 0 0 .497.438h12.234a.5.5 0 0 0 .496-.438zM3.809 3.563A1.5 1.5 0 0 1 4.981 3h6.038a1.5 1.5 0 0 1 1.172.563l3.7 4.625a.5.5 0 0 1 .105.374l-.39 3.124A1.5 1.5 0 0 1 14.117 13H1.883a1.5 1.5 0 0 1-1.489-1.314l-.39-3.124a.5.5 0 0 1 .106-.374z" />
+                  </svg>
+                  All Mail</li>
+                <li className='nav-item'>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-inbox" viewBox="0 0 16 16">
+                    <path d="M4.98 4a.5.5 0 0 0-.39.188L1.54 8H6a.5.5 0 0 1 .5.5 1.5 1.5 0 1 0 3 0A.5.5 0 0 1 10 8h4.46l-3.05-3.812A.5.5 0 0 0 11.02 4zm9.954 5H10.45a2.5 2.5 0 0 1-4.9 0H1.066l.32 2.562a.5.5 0 0 0 .497.438h12.234a.5.5 0 0 0 .496-.438zM3.809 3.563A1.5 1.5 0 0 1 4.981 3h6.038a1.5 1.5 0 0 1 1.172.563l3.7 4.625a.5.5 0 0 1 .105.374l-.39 3.124A1.5 1.5 0 0 1 14.117 13H1.883a1.5 1.5 0 0 1-1.489-1.314l-.39-3.124a.5.5 0 0 1 .106-.374z" />
+                  </svg>
+                  Spam</li>
+                <li className='nav-item'>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-inbox" viewBox="0 0 16 16">
+                    <path d="M4.98 4a.5.5 0 0 0-.39.188L1.54 8H6a.5.5 0 0 1 .5.5 1.5 1.5 0 1 0 3 0A.5.5 0 0 1 10 8h4.46l-3.05-3.812A.5.5 0 0 0 11.02 4zm9.954 5H10.45a2.5 2.5 0 0 1-4.9 0H1.066l.32 2.562a.5.5 0 0 0 .497.438h12.234a.5.5 0 0 0 .496-.438zM3.809 3.563A1.5 1.5 0 0 1 4.981 3h6.038a1.5 1.5 0 0 1 1.172.563l3.7 4.625a.5.5 0 0 1 .105.374l-.39 3.124A1.5 1.5 0 0 1 14.117 13H1.883a1.5 1.5 0 0 1-1.489-1.314l-.39-3.124a.5.5 0 0 1 .106-.374z" />
+                  </svg>
+                  Trash</li>
+                <li className='nav-item'>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-inbox" viewBox="0 0 16 16">
+                    <path d="M4.98 4a.5.5 0 0 0-.39.188L1.54 8H6a.5.5 0 0 1 .5.5 1.5 1.5 0 1 0 3 0A.5.5 0 0 1 10 8h4.46l-3.05-3.812A.5.5 0 0 0 11.02 4zm9.954 5H10.45a2.5 2.5 0 0 1-4.9 0H1.066l.32 2.562a.5.5 0 0 0 .497.438h12.234a.5.5 0 0 0 .496-.438zM3.809 3.563A1.5 1.5 0 0 1 4.981 3h6.038a1.5 1.5 0 0 1 1.172.563l3.7 4.625a.5.5 0 0 1 .105.374l-.39 3.124A1.5 1.5 0 0 1 14.117 13H1.883a1.5 1.5 0 0 1-1.489-1.314l-.39-3.124a.5.5 0 0 1 .106-.374z" />
+                  </svg>
+                  subscriptions</li>
+                <li className='nav-item'>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-inbox" viewBox="0 0 16 16">
+                    <path d="M4.98 4a.5.5 0 0 0-.39.188L1.54 8H6a.5.5 0 0 1 .5.5 1.5 1.5 0 1 0 3 0A.5.5 0 0 1 10 8h4.46l-3.05-3.812A.5.5 0 0 0 11.02 4zm9.954 5H10.45a2.5 2.5 0 0 1-4.9 0H1.066l.32 2.562a.5.5 0 0 0 .497.438h12.234a.5.5 0 0 0 .496-.438zM3.809 3.563A1.5 1.5 0 0 1 4.981 3h6.038a1.5 1.5 0 0 1 1.172.563l3.7 4.625a.5.5 0 0 1 .105.374l-.39 3.124A1.5 1.5 0 0 1 14.117 13H1.883a1.5 1.5 0 0 1-1.489-1.314l-.39-3.124a.5.5 0 0 1 .106-.374z" />
+                  </svg>
+                  Manage labels</li>
+                <li className='nav-item'>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-inbox" viewBox="0 0 16 16">
+                    <path d="M4.98 4a.5.5 0 0 0-.39.188L1.54 8H6a.5.5 0 0 1 .5.5 1.5 1.5 0 1 0 3 0A.5.5 0 0 1 10 8h4.46l-3.05-3.812A.5.5 0 0 0 11.02 4zm9.954 5H10.45a2.5 2.5 0 0 1-4.9 0H1.066l.32 2.562a.5.5 0 0 0 .497.438h12.234a.5.5 0 0 0 .496-.438zM3.809 3.563A1.5 1.5 0 0 1 4.981 3h6.038a1.5 1.5 0 0 1 1.172.563l3.7 4.625a.5.5 0 0 1 .105.374l-.39 3.124A1.5 1.5 0 0 1 14.117 13H1.883a1.5 1.5 0 0 1-1.489-1.314l-.39-3.124a.5.5 0 0 1 .106-.374z" />
+                  </svg>
+                  Create new label</li>
+
+              </ul>
             </div>
 
             {/* main content */}
-            <div className='col-md 9 border'>
-              {/* <h2>main bar</h2> */}
+            <div className='col-md 9 main-content'>
+
+
+              <div className='email-list'>
+                <div className='email-row d-flex align-items-center border-bottom'>
+                  <Form.Check type='checkbox' className='email-checkbox p-2' />
+                  <button variant="link" className='star-btn p-0 btn p-2'>
+                    ☆
+                  </button>
+                  <span className='sender p-2'>Google</span>
+                  <span className='subject flex-grow-1 p-2'>
+                    Welcome to Gmail{"  "}
+                    <span className='snippet'>
+                      -   Get started with your new account
+                    </span>
+                  </span>
+                  <span className='time p-2'> 10.30 AM</span>
+                </div>
+
+              </div>
+              <div className='email-list'>
+                <div className='email-row d-flex align-items-center border-bottom'>
+                  <Form.Check type='checkbox' className='email-checkbox p-2' />
+                  <button variant="link" className='star-btn p-0 btn p-2'>
+                    ☆
+                  </button>
+                  <span className='sender p-2'>Google</span>
+                  <span className='subject flex-grow-1 p-2'>
+                    Welcome to Gmail{"  "}
+                    <span className='snippet'>
+                      -   Get started with your new account
+                    </span>
+                  </span>
+                  <span className='time p-2'> 10.30 AM</span>
+                </div>
+
+              </div>
+              <div className='email-list'>
+                <div className='email-row d-flex align-items-center border-bottom'>
+                  <Form.Check type='checkbox' className='email-checkbox p-2' />
+                  <button variant="link" className='star-btn p-0 btn p-2'>
+                    ☆
+                  </button>
+                  <span className='sender p-2'>Google</span>
+                  <span className='subject flex-grow-1 p-2'>
+                    Welcome to Gmail{"  "}
+                    <span className='snippet'>
+                      -   Get started with your new account
+                    </span>
+                  </span>
+                  <span className='time p-2'> 10.30 AM</span>
+                </div>
+
+              </div>
+              <div className='email-list'>
+                <div className='email-row d-flex align-items-center border-bottom'>
+                  <Form.Check type='checkbox' className='email-checkbox p-2' />
+                  <button variant="link" className='star-btn p-0 btn p-2'>
+                    ☆
+                  </button>
+                  <span className='sender p-2'>Google</span>
+                  <span className='subject flex-grow-1 p-2'>
+                    Welcome to Gmail{"  "}
+                    <span className='snippet'>
+                      -   Get started with your new account
+                    </span>
+                  </span>
+                  <span className='time p-2'> 10.30 AM</span>
+                </div>
+
+              </div>
+              <div className='email-list'>
+                <div className='email-row d-flex align-items-center border-bottom'>
+                  <Form.Check type='checkbox' className='email-checkbox p-2' />
+                  <button variant="link" className='star-btn p-0 btn p-2'>
+                    ☆
+                  </button>
+                  <span className='sender p-2'>Google</span>
+                  <span className='subject flex-grow-1 p-2'>
+                    Welcome to Gmail{"  "}
+                    <span className='snippet'>
+                      -   Get started with your new account
+                    </span>
+                  </span>
+                  <span className='time p-2'> 10.30 AM</span>
+                </div>
+
+              </div>
+              <div className='email-list'>
+                <div className='email-row d-flex align-items-center border-bottom'>
+                  <Form.Check type='checkbox' className='email-checkbox p-2' />
+                  <button variant="link" className='star-btn p-0 btn p-2'>
+                    ☆
+                  </button>
+                  <span className='sender p-2'>Google</span>
+                  <span className='subject flex-grow-1 p-2'>
+                    Welcome to Gmail{"  "}
+                    <span className='snippet'>
+                      -   Get started with your new account
+                    </span>
+                  </span>
+                  <span className='time p-2'> 10.30 AM</span>
+                </div>
+
+              </div>
+              <div className='email-list'>
+                <div className='email-row d-flex align-items-center border-bottom'>
+                  <Form.Check type='checkbox' className='email-checkbox p-2' />
+                  <button variant="link" className='star-btn p-0 btn p-2'>
+                    ☆
+                  </button>
+                  <span className='sender p-2'>Google</span>
+                  <span className='subject flex-grow-1 p-2'>
+                    Welcome to Gmail{"  "}
+                    <span className='snippet'>
+                      -   Get started with your new account
+                    </span>
+                  </span>
+                  <span className='time p-2'> 10.30 AM</span>
+                </div>
+
+              </div>
+              <div className='email-list'>
+                <div className='email-row d-flex align-items-center border-bottom'>
+                  <Form.Check type='checkbox' className='email-checkbox p-2' />
+                  <button variant="link" className='star-btn p-0 btn p-2'>
+                    ☆
+                  </button>
+                  <span className='sender p-2'>Google</span>
+                  <span className='subject flex-grow-1 p-2'>
+                    Welcome to Gmail{"  "}
+                    <span className='snippet'>
+                      -   Get started with your new account
+                    </span>
+                  </span>
+                  <span className='time p-2'> 10.30 AM</span>
+                </div>
+
+              </div>
+              <div className='email-list'>
+                <div className='email-row d-flex align-items-center border-bottom'>
+                  <Form.Check type='checkbox' className='email-checkbox p-2' />
+                  <button variant="link" className='star-btn p-0 btn p-2'>
+                    ☆
+                  </button>
+                  <span className='sender p-2'>Google</span>
+                  <span className='subject flex-grow-1 p-2'>
+                    Welcome to Gmail{"  "}
+                    <span className='snippet'>
+                      -   Get started with your new account
+                    </span>
+                  </span>
+                  <span className='time p-2'> 10.30 AM</span>
+                </div>
+
+              </div>
+              <div className='email-list'>
+                <div className='email-row d-flex align-items-center border-bottom'>
+                  <Form.Check type='checkbox' className='email-checkbox p-2' />
+                  <button variant="link" className='star-btn p-0 btn p-2'>
+                    ☆
+                  </button>
+                  <span className='sender p-2'>Google</span>
+                  <span className='subject flex-grow-1 p-2'>
+                    Welcome to Gmail{"  "}
+                    <span className='snippet'>
+                      -   Get started with your new account
+                    </span>
+                  </span>
+                  <span className='time p-2'> 10.30 AM</span>
+                </div>
+
+              </div>
+<div className='email-list'>
+                <div className='email-row d-flex align-items-center border-bottom'>
+                  <Form.Check type='checkbox' className='email-checkbox p-2' />
+                  <button variant="link" className='star-btn p-0 btn p-2'>
+                    ☆
+                  </button>
+                  <span className='sender p-2'>Google</span>
+                  <span className='subject flex-grow-1 p-2'>
+                    Welcome to Gmail{"  "}
+                    <span className='snippet'>
+                      -   Get started with your new account
+                    </span>
+                  </span>
+                  <span className='time p-2'> 10.30 AM</span>
+                </div>
+
+              </div>
+              <div className='email-list'>
+               
+
+              </div>
+              
             </div>
 
           </div>
