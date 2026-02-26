@@ -114,17 +114,17 @@ function App() {
 
                   Inbox</li>
                 <li className='nav-item'>
-
-
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
                     <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
                   </svg>
                   Starred</li>
                 <li className='nav-item'>
+
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
                     <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z" />
                     <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0" />
                   </svg>
+
                   Snoozed</li>
                 <li className='nav-item'>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16">
@@ -135,7 +135,6 @@ function App() {
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark" viewBox="0 0 16 16">
                     <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5z" />
                   </svg>
-
                   Drafts</li>
                 <li className='nav-item'>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
@@ -198,13 +197,13 @@ function App() {
                   </svg>
                   Create new label</li>
 
-
               </ul>
             </div>
 
             {/* main content */}
+
             <div className='col-md 10 main-content'>
-              <div className='container'>
+              { <div className='container'>
                 <div className='row'>
                   <div className='col-md 3'>
                     Primary
@@ -226,256 +225,419 @@ function App() {
 
                 </div>
 
-              </div>
+              </div> }
 
 
-              <div className='email-list'>
+              <div className='email-list box-1'>
                 <div className='email-row d-flex align-items-center border-bottom read'>
                   <Form.Check type='checkbox' className='email-checkbox p-2' />
                   <button variant="link" className='star-btn p-0 btn p-2'>
                     ☆
                   </button>
-                  <span className='sender p-2'>Google</span>
+                  <span className='sender p-2'>Google security</span>
                   <span className='subject flex-grow-1 p-2'>
-                    Welcome to Gmail{"  "}
+                    Security Alert: New sign-in detected{"  "}
                     <span className='snippet'>
-                      -   Get started with your new account
+                      -We noticed a new login to your account from Chrome on Windows.
                     </span>
                   </span>
-                  <span className='time p-2'> 10.30 AM</span>
+                  <span className='time p-2'> 9:42 AM</span>
                 </div>
 
               </div>
-              <div className='email-list'>
+              <div className='email-list box-1'>
                 <div className='email-row d-flex align-items-center border-bottom unread'>
                   <Form.Check type='checkbox' className='email-checkbox p-2' />
                   <button variant="link" className='star-btn p-0 btn p-2'>
                     ☆
                   </button>
-                  <span className='sender p-2'>Google</span>
+                  <span className='sender p-2'>Amazon India</span>
                   <span className='subject flex-grow-1 p-2'>
-                    Welcome to Gmail{"  "}
+                    Your order has been shipped{"  "}
                     <span className='snippet'>
-                      -   Get started with your new account
+                      -  Your package is on the way and will arrive by 18 Feb.
                     </span>
                   </span>
-                  <span className='time p-2'> 10.30 AM</span>
+                  <span className='time p-2'>  8:15 AM</span>
                 </div>
 
               </div>
-              <div className='email-list'>
+              <div className='email-list box-1'>
                 <div className='email-row d-flex align-items-center border-bottom read'>
                   <Form.Check type='checkbox' className='email-checkbox p-2' />
                   <button variant="link" className='star-btn p-0 btn p-2'>
                     ☆
                   </button>
-                  <span className='sender p-2'>Google</span>
+                  <span className='sender p-2'> LinkedIn</span>
                   <span className='subject flex-grow-1 p-2'>
-                    Welcome to Gmail{"  "}
+                    You have 3 new connection requests{"  "}
                     <span className='snippet'>
-                      -   Get started with your new account
+                      -    See who wants to connect with you this week.
                     </span>
                   </span>
-                  <span className='time p-2'> 10.30 AM</span>
+                  <span className='time p-2'>Yesterday</span>
                 </div>
 
               </div>
-
-              <div className='email-list'>
-                <div className='email-row d-flex align-items-center border-bottom read'>
-                  <Form.Check type='checkbox' className='email-checkbox p-2' />
-                  <button variant="link" className='star-btn p-0 btn p-2'>
-                    ☆
-                  </button>
-                  <span className='sender p-2'>Google</span>
-                  <span className='subject flex-grow-1 p-2'>
-                    Welcome to Gmail{"  "}
-                    <span className='snippet'>
-                      -   Get started with your new account
-                    </span>
-                  </span>
-                  <span className='time p-2'> 10.30 AM</span>
-                </div>
-
-              </div>
-              <div className='email-list'>
+              <div className='email-list box-1'>
                 <div className='email-row d-flex align-items-center border-bottom unread'>
                   <Form.Check type='checkbox' className='email-checkbox p-2' />
                   <button variant="link" className='star-btn p-0 btn p-2'>
                     ☆
                   </button>
-                  <span className='sender p-2'>Google</span>
+                  <span className='sender p-2'>GitHub</span>
                   <span className='subject flex-grow-1 p-2'>
-                    Welcome to Gmail{"  "}
+                    New sign-in from a new device{"  "}
                     <span className='snippet'>
-                      -   Get started with your new account
+                      -  We detected a login from Mumbai, Maharashtra.
                     </span>
                   </span>
-                  <span className='time p-2'> 10.30 AM</span>
+                  <span className='time p-2'> 11:30 PM</span>
                 </div>
 
               </div>
-              <div className='email-list'>
-                <div className='email-row d-flex align-items-center border-bottom read'>
-                  <Form.Check type='checkbox' className='email-checkbox p-2' />
-                  <button variant="link" className='star-btn p-0 btn p-2'>
-                    ☆
-                  </button>
-                  <span className='sender p-2'>Google</span>
-                  <span className='subject flex-grow-1 p-2'>
-                    Welcome to Gmail{"  "}
-                    <span className='snippet'>
-                      -   Get started with your new account
-                    </span>
-                  </span>
-                  <span className='time p-2'> 10.30 AM</span>
-                </div>
-
-              </div>
-              <div className='email-list'>
+              <div className='email-list box-1'>
                 <div className='email-row d-flex align-items-center border-bottom unread'>
                   <Form.Check type='checkbox' className='email-checkbox p-2' />
                   <button variant="link" className='star-btn p-0 btn p-2'>
                     ☆
                   </button>
-                  <span className='sender p-2'>Google</span>
+                  <span className='sender p-2'>Paytm</span>
                   <span className='subject flex-grow-1 p-2'>
-                    Welcome to Gmail{"  "}
+                    Payment successfu{"  "}
                     <span className='snippet'>
-                      -   Get started with your new account
+                      -  ₹1,250 has been debited from your account.
                     </span>
                   </span>
-                  <span className='time p-2'> 10.30 AM</span>
+                  <span className='time p-2'> 7:05 AM</span>
                 </div>
 
               </div>
-              <div className='email-list'>
+              <div className='email-list box-1'>
+                <div className='email-row d-flex align-items-center border-bottom unread' >
+                  <Form.Check type='checkbox' className='email-checkbox p-2' />
+                  <button variant="link" className='star-btn p-0 btn p-2'>
+                    ☆
+                  </button>
+                  <span className='sender p-2'> Netflix</span>
+                  <span className='subject flex-grow-1 p-2'>
+                    New device started streaming{"  "}
+                    <span className='snippet'>
+                      - Your account is being used on a new device.
+                    </span>
+                  </span>
+                  <span className='time p-2'> Monday</span>
+                </div>
+
+              </div>
+              <div className='email-list box-1'>
                 <div className='email-row d-flex align-items-center border-bottom read'>
                   <Form.Check type='checkbox' className='email-checkbox p-2' />
                   <button variant="link" className='star-btn p-0 btn p-2'>
                     ☆
                   </button>
-                  <span className='sender p-2'>Google</span>
+                  <span className='sender p-2'> Flipkarte</span>
                   <span className='subject flex-grow-1 p-2'>
-                    Welcome to Gmail{"  "}
+                    Big Billion Days is live!{"  "}
                     <span className='snippet'>
-                      -   Get started with your new account
+                      - Grab up to 70% off on electronics and fashion.
                     </span>
                   </span>
-                  <span className='time p-2'> 10.30 AM</span>
+                  <span className='time p-2'>  2:10 PM</span>
                 </div>
 
               </div>
-              <div className='email-list'>
+              <div className='email-list box-1'>
                 <div className='email-row d-flex align-items-center border-bottom read'>
                   <Form.Check type='checkbox' className='email-checkbox p-2' />
                   <button variant="link" className='star-btn p-0 btn p-2'>
                     ☆
                   </button>
-                  <span className='sender p-2'>Google</span>
+                  <span className='sender p-2'>Swiggy</span>
                   <span className='subject flex-grow-1 p-2'>
-                    Welcome to Gmail{"  "}
+                    60% OFF on your favorite restaurants{"  "}
                     <span className='snippet'>
-                      -   Get started with your new account
+                      -Order now and enjoy free delivery today.
                     </span>
                   </span>
-                  <span className='time p-2'> 10.30 AM</span>
+                  <span className='time p-2'>  1:05 PM</span>
                 </div>
 
               </div>
-              <div className='email-list'>
+              <div className='email-list box-1'>
                 <div className='email-row d-flex align-items-center border-bottom read'>
                   <Form.Check type='checkbox' className='email-checkbox p-2' />
                   <button variant="link" className='star-btn p-0 btn p-2'>
                     ☆
                   </button>
-                  <span className='sender p-2'>Google</span>
+                  <span className='sender p-2'> HDFC Bank</span>
                   <span className='subject flex-grow-1 p-2'>
-                    Welcome to Gmail{"  "}
+                    Monthly Account Statement – January 2026{"  "}
                     <span className='snippet'>
-                      -   Get started with your new account
+                      -  Your account statement is now available for download.
                     </span>
                   </span>
-                  <span className='time p-2'> 10.30 AM</span>
+                  <span className='time p-2'> 10 Feb</span>
                 </div>
 
               </div>
-              <div className='email-list'>
+              <div className='email-list box-1'>
                 <div className='email-row d-flex align-items-center border-bottom unread'>
                   <Form.Check type='checkbox' className='email-checkbox p-2' />
                   <button variant="link" className='star-btn p-0 btn p-2'>
                     ☆
                   </button>
-                  <span className='sender p-2'>Google</span>
+                  <span className='sender p-2'>  Instagram</span>
                   <span className='subject flex-grow-1 p-2'>
-                    Welcome to Gmail{"  "}
+                    New login to your account{"  "}
                     <span className='snippet'>
-                      -   Get started with your new account
+                      -   We noticed a login from a new location.
                     </span>
                   </span>
-                  <span className='time p-2'> 10.30 AM</span>
+                  <span className='time p-2'>  5:40 PM</span>
                 </div>
 
               </div>
-              <div className='email-list'>
+              <div className='email-list box-1'>
                 <div className='email-row d-flex align-items-center border-bottom unread'>
                   <Form.Check type='checkbox' className='email-checkbox p-2' />
                   <button variant="link" className='star-btn p-0 btn p-2'>
                     ☆
                   </button>
-                  <span className='sender p-2'>Google</span>
+                  <span className='sender p-2'> Zoom</span>
                   <span className='subject flex-grow-1 p-2'>
-                    Welcome to Gmail{"  "}
+                    Meeting Reminder: Project Discussion{"  "}
                     <span className='snippet'>
-                      -   Get started with your new account
+                      -   Your meeting starts in 30 minutes. Join now.
                     </span>
                   </span>
                   <span className='time p-2'> 10.30 AM</span>
                 </div>
-
               </div>
-              <div className='email-list'>
+              <div className='email-list box-1'>
                 <div className='email-row d-flex align-items-center border-bottom read'>
                   <Form.Check type='checkbox' className='email-checkbox p-2' />
                   <button variant="link" className='star-btn p-0 btn p-2'>
                     ☆
                   </button>
-                  <span className='sender p-2'>Google</span>
+                  <span className='sender p-2'> Zoom</span>
                   <span className='subject flex-grow-1 p-2'>
-                    Welcome to Gmail{"  "}
+                    Meeting Reminder: Project Discussion{"  "}
                     <span className='snippet'>
-                      -   Get started with your new account
+                      -   Your meeting starts in 30 minutes. Join now.
                     </span>
                   </span>
                   <span className='time p-2'> 10.30 AM</span>
                 </div>
-
               </div>
-              <div className='email-list'>
+              <div className='email-list box-1'>
+                <div className='email-row d-flex align-items-center border-bottom raed'>
+                  <Form.Check type='checkbox' className='email-checkbox p-2' />
+                  <button variant="link" className='star-btn p-0 btn p-2'>
+                    ☆
+                  </button>
+                  <span className='sender p-2'> Zoom</span>
+                  <span className='subject flex-grow-1 p-2'>
+                    Meeting Reminder: Project Discussion{"  "}
+                    <span className='snippet'>
+                      -   Your meeting starts in 30 minutes. Join now.
+                    </span>
+                  </span>
+                  <span className='time p-2'> 10.30 AM</span>
+                </div>
+              </div>
+              <div className='email-list box-1'>
+                <div className='email-row d-flex align-items-center border-bottom unraed'>
+                  <Form.Check type='checkbox' className='email-checkbox p-2' />
+                  <button variant="link" className='star-btn p-0 btn p-2'>
+                    ☆
+                  </button>
+                  <span className='sender p-2'> Zoom</span>
+                  <span className='subject flex-grow-1 p-2'>
+                    Meeting Reminder: Project Discussion{"  "}
+                    <span className='snippet'>
+                      -   Your meeting starts in 30 minutes. Join now.
+                    </span>
+                  </span>
+                  <span className='time p-2'> 10.30 AM</span>
+                </div>
+              </div>
+              <div className='email-list box-1'>
                 <div className='email-row d-flex align-items-center border-bottom unread'>
                   <Form.Check type='checkbox' className='email-checkbox p-2' />
                   <button variant="link" className='star-btn p-0 btn p-2'>
                     ☆
                   </button>
-                  <span className='sender p-2'>Google</span>
+                  <span className='sender p-2'> Zoom</span>
                   <span className='subject flex-grow-1 p-2'>
-                    Welcome to Gmail{"  "}
+                    Meeting Reminder: Project Discussion{"  "}
                     <span className='snippet'>
-                      -   Get started with your new account
+                      -   Your meeting starts in 30 minutes. Join now.
+                    </span>
+                  </span>
+                  <span className='time p-2'> 10.30 AM</span>
+                </div>
+              </div>
+              <div className='email-list box-1'>
+                <div className='email-row d-flex align-items-center border-bottom raed'>
+                  <Form.Check type='checkbox' className='email-checkbox p-2' />
+                  <button variant="link" className='star-btn p-0 btn p-2'>
+                    ☆
+                  </button>
+                  <span className='sender p-2'> Zoom</span>
+                  <span className='subject flex-grow-1 p-2'>
+                    Meeting Reminder: Project Discussion{"  "}
+                    <span className='snippet'>
+                      -   Your meeting starts in 30 minutes. Join now.
+                    </span>
+                  </span>
+                  <span className='time p-2'> 10.30 AM</span>
+                </div>
+              </div>
+              <div className='email-list box-1'>
+                <div className='email-row d-flex align-items-center border-bottom unraed'>
+                  <Form.Check type='checkbox' className='email-checkbox p-2' />
+                  <button variant="link" className='star-btn p-0 btn p-2'>
+                    ☆
+                  </button>
+                  <span className='sender p-2'> Zoom</span>
+                  <span className='subject flex-grow-1 p-2'>
+                    Meeting Reminder: Project Discussion{"  "}
+                    <span className='snippet'>
+                      -   Your meeting starts in 30 minutes. Join now.
+                    </span>
+                  </span>
+                  <span className='time p-2'> 10.30 AM</span>
+                </div>
+              </div>
+              <div className='email-list box-1'>
+                <div className='email-row d-flex align-items-center border-bottom read'>
+                  <Form.Check type='checkbox' className='email-checkbox p-2' />
+                  <button variant="link" className='star-btn p-0 btn p-2'>
+                    ☆
+                  </button>
+                  <span className='sender p-2'> Zoom</span>
+                  <span className='subject flex-grow-1 p-2'>
+                    Meeting Reminder: Project Discussion{"  "}
+                    <span className='snippet'>
+                      -   Your meeting starts in 30 minutes. Join now.
+                    </span>
+                  </span>
+                  <span className='time p-2'> 10.30 AM</span>
+                </div>
+              </div>
+              <div className='email-list box-1'>
+                <div className='email-row d-flex align-items-center border-bottom raed'>
+                  <Form.Check type='checkbox' className='email-checkbox p-2' />
+                  <button variant="link" className='star-btn p-0 btn p-2'>
+                    ☆
+                  </button>
+                  <span className='sender p-2'> Zoom</span>
+                  <span className='subject flex-grow-1 p-2'>
+                    Meeting Reminder: Project Discussion{"  "}
+                    <span className='snippet'>
+                      -   Your meeting starts in 30 minutes. Join now.
+                    </span>
+                  </span>
+                  <span className='time p-2'> 10.30 AM</span>
+                </div>
+              </div>
+              <div className='email-list box-1'>
+                <div className='email-row d-flex align-items-center border-bottom unraed'>
+                  <Form.Check type='checkbox' className='email-checkbox p-2' />
+                  <button variant="link" className='star-btn p-0 btn p-2'>
+                    ☆
+                  </button>
+                  <span className='sender p-2'> Zoom</span>
+                  <span className='subject flex-grow-1 p-2'>
+                    Meeting Reminder: Project Discussion{"  "}
+                    <span className='snippet'>
+                      -   Your meeting starts in 30 minutes. Join now.
+                    </span>
+                  </span>
+                  <span className='time p-2'> 10.30 AM</span>
+                </div>
+              </div>
+              <div className='email-list box-1'>
+                <div className='email-row d-flex align-items-center border-bottom unraed'>
+                  <Form.Check type='checkbox' className='email-checkbox p-2' />
+                  <button variant="link" className='star-btn p-0 btn p-2'>
+                    ☆
+                  </button>
+                  <span className='sender p-2'> Zoom</span>
+                  <span className='subject flex-grow-1 p-2'>
+                    Meeting Reminder: Project Discussion{"  "}
+                    <span className='snippet'>
+                      -   Your meeting starts in 30 minutes. Join now.
+                    </span>
+                  </span>
+                  <span className='time p-2'> 10.30 AM</span>
+                </div>
+              </div>
+              <div className='email-list box-1'>
+                <div className='email-row d-flex align-items-center border-bottom read'>
+                  <Form.Check type='checkbox' className='email-checkbox p-2' />
+                  <button variant="link" className='star-btn p-0 btn p-2'>
+                    ☆
+                  </button>
+                  <span className='sender p-2'> Zoom</span>
+                  <span className='subject flex-grow-1 p-2'>
+                    Meeting Reminder: Project Discussion{"  "}
+                    <span className='snippet'>
+                      -   Your meeting starts in 30 minutes. Join now.
+                    </span>
+                  </span>
+                  <span className='time p-2'> 10.30 AM</span>
+                </div>
+              </div>
+              <div className='email-list box-1'>
+                <div className='email-row d-flex align-items-center border-bottom raed'>
+                  <Form.Check type='checkbox' className='email-checkbox p-2' />
+                  <button variant="link" className='star-btn p-0 btn p-2'>
+                    ☆
+                  </button>
+                  <span className='sender p-2'> Zoom</span>
+                  <span className='subject flex-grow-1 p-2'>
+                    Meeting Reminder: Project Discussion{"  "}
+                    <span className='snippet'>
+                      -   Your meeting starts in 30 minutes. Join now.
+                    </span>
+                  </span>
+                  <span className='time p-2'> 10.30 AM</span>
+                </div>
+              </div>
+              <div className='email-list box-1'>
+                <div className='email-row d-flex align-items-center border-bottom read'>
+                  <Form.Check type='checkbox' className='email-checkbox p-2' />
+                  <button variant="link" className='star-btn p-0 btn p-2'>
+                    ☆
+                  </button>
+                  <span className='sender p-2'> Zoom</span>
+                  <span className='subject flex-grow-1 p-2'>
+                    Meeting Reminder: Project Discussion{" "}
+                    <span className='snippet'>
+                      -   Your meeting starts in 30 minutes. Join now.
                     </span>
                   </span>
                   <span className='time p-2'> 10.30 AM</span>
                 </div>
 
-              </div>
-              <div className='email-list'>
-
 
               </div>
+              <div className='email-list box-1'>
+<div className='box-2'>
+                <h3>Test of</h3>
+
+              </div>
+
+              </div>
+              
 
             </div>
+             
 
           </div>
+           
         </div>
       </div>
     </>
