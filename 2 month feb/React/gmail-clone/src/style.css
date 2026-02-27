@@ -100,7 +100,7 @@ ul {
 
 .main-content {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin-left: 16%;
     margin-top: 4%;
     padding-left: 0;
@@ -197,4 +197,12 @@ ul {
     flex-direction: row;
     gap: 10px;
     font-weight: bold;
+}
+
+.nav-i {
+    padding: 10px 24px 0 20px !important;
+    margin-top: 50px;
+    margin: 15px;
+    gap: 252px;
+    
 }
