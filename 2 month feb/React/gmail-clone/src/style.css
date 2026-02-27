@@ -7,12 +7,12 @@
     box-sizing: border-box;
     font-family: "Google Sans", sans-serif;
     font-optical-sizing: auto;
-   
+
     font-style: normal;
     font-variation-settings:
         "GRAD" 0;
-        font-size: .975rem;
-    
+    font-size: .975rem;
+
 
 }
 
@@ -99,15 +99,17 @@ ul {
 
 .main-content {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     margin-left: 16%;
     margin-top: 4%;
     padding-left: 0;
 }
-.box-1{
+
+.box-1 {
     width: 95%;
 }
-.box-2{
+
+.box-2 {
     width: 5%;
 }
 
@@ -155,4 +157,31 @@ ul {
 
 .unread {
     font-weight: bold;
+}
+
+.icons {
+    margin-left: 15px;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.header2 {
+    font-weight: 250px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-2 {
+    margin-bottom: 25px;
+    margin-left: 25px;
+
+}
+
+.container-2 .font {
+    font: size 25px;
 }
