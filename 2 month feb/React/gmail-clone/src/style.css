@@ -95,6 +95,7 @@ ul {
     display: flex;
     flex-direction: row;
     gap: 10px;
+    font-weight: 50px;
 }
 
 .main-content {
@@ -184,3 +185,16 @@ ul {
 
 }
 
+.nav-item2 {
+    padding: 10px 24px 0 20px !important;
+    height: 32px;
+    border-radius: 15px;
+    font-size: 18px;
+    color: #202124;
+    margin: 2px 0;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    font-weight: bold;
+}
