@@ -179,9 +179,8 @@ ul {
 .container-2 {
     margin-bottom: 25px;
     margin-left: 25px;
+    font: size 100px;
+    font-weight: 400;
 
 }
 
-.container-2 .font {
-    font: size 25px;
-}
