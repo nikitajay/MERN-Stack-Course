@@ -15,11 +15,11 @@
 
 // 4. API get All Records get All recoreds from Dil and show to UI Front end
 
- // const getData = () => {
+// const getData = () => {
 
 //}
 //function getData(){
-    
+
 //}
 
 
@@ -28,42 +28,99 @@ console.log(" Hello node.js project started")
 const express = require('express')//node.js framework
 const app = express()
 const mongoose = require('mongoose')
-
+const cors = require('cors')
 
 
 app.use(express.json())
+app.use(cors())
 
 
 
-
-mongoose.connect("mongodb://127.0.0.1:27017/item-database").then( () => console.log("Mongo DB connected")).catch( (error) => console.log(error))
+mongoose.connect("mongodb://127.0.0.1:27017/item-database").then(() => console.log("Mongo DB connected")).catch((error) => console.log(error))
 
 const itemsSchema = new mongoose.Schema(
   {
-    name : String,
-    decription : String,
-    SellingPrice : Number
+    name: String,
+    decription: String,
+    SellingPrice: Number,
+    purchaesprice: Number,
+    quantity: Number,
+    unit: String
   }
 )
 
-const Items = new mongoose.model("Items",itemsSchema) //table name/ collection name - items
+const Items = new mongoose.model("Items", itemsSchema) //table name/ collection name - items
 
 
 
 
 //API 1  - create Item
 
-app.get("/helth",(req,res)=>{
-  res.status(200).json({message:"server is running"})
-})
+app.post("/apI/create-item", async (req, res) => {
+  try {
+    const { name, decription, SellingPrice, purchaesprice, quantity, unit } = req.body
+
+    const savaitem = new Items(
+      {
+        name,
+        decription,
+        SellingPrice,
+        purchaesprice,
+        quantity,
+        unit
+      }
+    )
+
+    await savaitem.save()
+
+    res.status(201).json({ message: "item created", data: savaitem })
+  } catch (error) {
+    console.log(error)
+  }
+
+}
+)
 
 
 //API 1  - Update Item
-//API 1  - Delete Item
-//API 1  - get All Item
+app.put("/api/Update-item", async (req, res) => {
+  try {
 
+  } catch (error) {
+    console.log
+  }
+
+})
+//API 1  - Delete Item
+app.delete("/api/Delete-item", async (req, res) => {
+  try {
+
+  } catch (error) {
+    console.log
+  }
+
+})
+//API 1  - get All Item
+app.get("/api/get-all-item", async (req, res) => {
+  try {
+
+    const items = await Items.find()
+
+    res.status(200).json({ message: "GET All Item List", data: items })
+
+  } catch (error) {
+    console.log
+  }
+
+})
+
+
+//health ApI
+app.get("/health", (req, res) => {
+  res.status(200).json({ message: "server is running" })
+})
 const PORT = 9090
 
-app.listen(PORT,() => {
+app.listen(PORT, () => {
   console.log('server started')
 })

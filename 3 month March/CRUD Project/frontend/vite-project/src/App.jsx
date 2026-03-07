@@ -7,50 +7,69 @@ import Table from 'react-bootstrap/Table';
 import { ToastContainer, toast } from 'react-toastify';
 
 import "./style.css"
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 
 
 
 function App() {
-const[ itemName , setItemName ] = useState()//use state hook
-
-console.log(itemName);
-
-
-const handleOnChange = (event) => {
-
-setItemName(event.target.value)
-
-console.log("Typing on input filed");
-};
+  const [itemName, setItemName] = useState()//use state hook
+  const [itemData, setData] = useState()
+  console.log(itemName);
 
 
+  const handleOnChange = (event) => {
+
+    setItemName(event.target.value)
+
+    console.log("Typing on input filed");
+  };
 
 
-  
+
+
+
   function submitform(e) {
     e.preventDefault();
     console.log("Form Sumitted");
 
 
     toast.success('Form Sumitted!', {
-    position: "top-right",
-    autoClose: 5000,
-    hideProgressBar: false,
-    closeOnClick: false,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    theme: "light",
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
 
-  });
+    });
 
   }
+  const getallItemsData = async () => {
+    try {
+      const apiResponse = await fetch("http://localhost:9090/apI/get-all-item")
+      const responseData = await apiResponse.json()
+      setData(responseData.data)
 
+
+      console.log(responseData)
+    } catch (error) {
+      console.log(error)
+    }
+  };
+
+  useEffect(() => {
+    getallItemsData();
+  }, [])
+
+  console.log(
+    itemData, "itemData ==>"
+  )
   return (
     <>
-     
+
       <ToastContainer
         position="top-right"
         autoClose={5000}
@@ -73,7 +92,7 @@ console.log("Typing on input filed");
               <Row className="mb-3">
                 <Form.Group as={Col} controlId="formGridEmail">
                   <Form.Label>Item Name</Form.Label>
-                  <Form.Control type="text" placeholder="Enter Item Name " onChange={() =>handleOnChange(event) } />
+                  <Form.Control type="text" placeholder="Enter Item Name " onChange={() => handleOnChange(event)} />
                 </Form.Group>
                 <Form.Group as={Col} controlId="formGridZip">
                   <Form.Label>Description</Form.Label>
@@ -140,32 +159,27 @@ console.log("Typing on input filed");
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>pen</td>
-                  <td>jel pen</td>
-                  <td>10</td>
-                  <td>20</td>
-                  <td>10</td>
-                  <td>Box</td>
-                  <td className='d-flex'>
+                
+                {
+                  itemData && itemData.map((each, index) => {
+                    return (
+                      <tr>
+                        <td>{index + 1}</td>
+                        <td>{each.name}</td>
+                        <td>{each.decription}</td>
+                        <td>{each.purchaesprice}</td>
+                        <td>{each.quantity}</td>
+                        <td>{each.SellingPrice}</td>
+
+                        <td>{each.unit}</td>
+                        <td className='d-flex'>
                     <button className='btn btn-success'>Edit</button>
                     <button className='btn btn-danger mx-2'>Delete</button>
                   </td>
-                </tr>
-                 <tr>
-                  <td>2</td>
-                  <td>Book</td>
-                  <td>Note-book</td>
-                  <td>10</td>
-                  <td>20</td>
-                  <td>10</td>
-                  <td>Box</td>
-                  <td className='d-flex'>
-                    <button className='btn btn-success'>Edit</button>
-                    <button className='btn btn-danger mx-2'>Delete</button>
-                  </td>
-                </tr>
+                      </tr>
+                    )
+                  })
+                }
 
               </tbody>
             </Table>
