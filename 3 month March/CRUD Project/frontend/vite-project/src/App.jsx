@@ -7,32 +7,34 @@ import Table from 'react-bootstrap/Table';
 import { ToastContainer, toast } from 'react-toastify';
 
 import "./style.css"
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 
 
 
 function App() {
   const [itemName, setItemName] = useState()//use state hook
+  const [description, setDescription] = useState()
+  const [purchaesPrice, setPurchaesPrice] = useState()
+  const [sellingPrice, setSellingPrice] = useState()
+  const [quantity, setQuantity] = useState()
+  const [unit, setUnit] = useState()
   const [itemData, setData] = useState()
-  console.log(itemName);
-
-
-  const handleOnChange = (event) => {
-
-    setItemName(event.target.value)
-
-    console.log("Typing on input filed");
-  };
-
-
 
 
 
   function submitform(e) {
     e.preventDefault();
-    console.log("Form Sumitted");
 
+
+    const data = {
+      name: itemName,
+      decription: description,
+      sellingPrice: sellingPrice,
+      quantity: quantity,
+
+    }
 
     toast.success('Form Sumitted!', {
       position: "top-right",
@@ -92,11 +94,21 @@ function App() {
               <Row className="mb-3">
                 <Form.Group as={Col} controlId="formGridEmail">
                   <Form.Label>Item Name</Form.Label>
-                  <Form.Control type="text" placeholder="Enter Item Name " onChange={() => handleOnChange(event)} />
+
+                  <Form.Control type="text" placeholder="Enter Item Name "
+
+                    onChange={(event) => setItemName(event.target.value)}
+                    value={itemName}
+
+                  />
                 </Form.Group>
                 <Form.Group as={Col} controlId="formGridZip">
                   <Form.Label>Description</Form.Label>
-                  <Form.Control type='text' placeholder='Enter Description ' />
+                  <Form.Control type='text' placeholder='Enter Discription'
+                    onChange={(event) => setDescription(event.target.value)}
+                    value={description}
+                  />
+
                 </Form.Group>
 
 
@@ -104,12 +116,18 @@ function App() {
               <Row className="mb-3">
                 <Form.Group as={Col} controlId="formGridPassword">
                   <Form.Label>Purchaes price</Form.Label>
-                  <Form.Control type="number" placeholder="Enter Purchaes price" />
+                  <Form.Control type="number" placeholder="Enter Purchaes price"
+                    onChange={(event) => setPurchaesPrice(event.target.value)}
+                    value={purchaesPrice}
+                  />
                 </Form.Group>
 
                 <Form.Group as={Col} controlId="formGridAddress1">
                   <Form.Label>Selling price</Form.Label>
-                  <Form.Control type="number" placeholder="Enter Selling price" />
+                  <Form.Control type="number" placeholder="Enter Selling price"
+                    onChange={(event) => setSellingPrice(event.target.value)}
+                    value={sellingPrice}
+                  />
                 </Form.Group>
 
               </Row>
@@ -117,12 +135,20 @@ function App() {
               <Row className="mb-3">
                 <Form.Group as={Col} className="mb-3" controlId="formGridAddress2">
                   <Form.Label>Quantity</Form.Label>
-                  <Form.Control type="number" placeholder="Enter quntity" />
+                  <Form.Control type="number" placeholder="Enter quntity"
+                    onChange={(event) => setQuantity(event.target.value)}
+                  />
                 </Form.Group>
 
                 <Form.Group as={Col} controlId="formGridState">
                   <Form.Label>unit</Form.Label>
-                  <Form.Select defaultValue="Choose...">
+                  <Form.Select defaultValue="Choose unit"
+                    value={unit}
+
+                    onChange={(event) => setUnit(event.target.value)}
+
+                  >
+
                     <option>Choose...</option>
                     <option>pice..</option>
                     <option>kg</option>
@@ -159,7 +185,7 @@ function App() {
                 </tr>
               </thead>
               <tbody>
-                
+
                 {
                   itemData && itemData.map((each, index) => {
                     return (
@@ -173,9 +199,9 @@ function App() {
 
                         <td>{each.unit}</td>
                         <td className='d-flex'>
-                    <button className='btn btn-success'>Edit</button>
-                    <button className='btn btn-danger mx-2'>Delete</button>
-                  </td>
+                          <button className='btn btn-success'>Edit</button>
+                          <button className='btn btn-danger mx-2'>Delete</button>
+                        </td>
                       </tr>
                     )
                   })
