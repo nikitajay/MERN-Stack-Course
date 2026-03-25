@@ -23,96 +23,34 @@
 //}
 
 
-console.log(" Hello node.js project started")
-
 const express = require('express')//node.js framework
 const app = express()
 const mongoose = require('mongoose')
 const cors = require('cors')
+const { connectDB } = require('./config/db')
 
-
+const{addItem,editItem,deleteItem ,getAllItems} = require('./controllers/itemControllers')
 app.use(express.json())
 app.use(cors())
 
 
 
-mongoose.connect("mongodb://127.0.0.1:27017/item-database").then(() => console.log("Mongo DB connected")).catch((error) => console.log(error))
-
-const itemsSchema = new mongoose.Schema(
-  {
-    name: String,
-    decription: String,
-    SellingPrice: Number,
-    purchaesprice: Number,
-    quantity: Number,
-    unit: String
-  }
-)
-
-const Items = new mongoose.model("Items", itemsSchema) //table name/ collection name - items
-
+connectDB()
 
 
 
 //API 1  - create Item
 
-app.post("/apI/create-item", async (req, res) => {
-  try {
-    const { name, decription, SellingPrice, purchaesprice, quantity, unit } = req.body
-
-    const savaitem = new Items(
-      {
-        name,
-        decription,
-        SellingPrice,
-        purchaesprice,
-        quantity,
-        unit
-      }
-    )
-
-    await savaitem.save()
-
-    res.status(201).json({ message: "item created", data: savaitem })
-  } catch (error) {
-    console.log(error)
-  }
-
-}
+app.post("/apI/create-item",addItem
 )
 
 
 //API 1  - Update Item
-app.put("/api/Update-item", async (req, res) => {
-  try {
-
-  } catch (error) {
-    console.log
-  }
-
-})
+app.put("/api/Update-item", editItem)
 //API 1  - Delete Item
-app.delete("/api/Delete-item", async (req, res) => {
-  try {
-
-  } catch (error) {
-    console.log
-  }
-
-})
+app.delete("/api/delete-item/:id",deleteItem  )
 //API 1  - get All Item
-app.get("/api/get-all-item", async (req, res) => {
-  try {
-
-    const items = await Items.find()
-
-    res.status(200).json({ message: "GET All Item List", data: items })
-
-  } catch (error) {
-    console.log
-  }
-
-})
+app.get("/api/get-all-item",getAllItems  )
 
 
 //health ApI
