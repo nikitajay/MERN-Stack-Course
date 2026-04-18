@@ -20,8 +20,9 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 // Importing Modal component from react-bootstrap to show delete confirmation popup
 import Modal from 'react-bootstrap/Modal';
+import AuthNavBar from '../components/AuthNavBar';
 
-function Homepage() {
+function Item() {
     // useState - hook, we can store value in useState and that we can update
     // useEffect - side effect perform - each page lod it will be call useEffect
     // useMemo
@@ -188,6 +189,8 @@ function Homepage() {
 
     return (
         <>
+     
+
             {/* ToastContainer renders the toast notification popup on the screen */}
             <ToastContainer
                 // Setting the default position of all toasts to top-right
@@ -213,7 +216,7 @@ function Homepage() {
             />
 
             {/* Page heading showing the title of the CRUD application */}
-            <h2 className='text-danger text-center my-5'>CRUD - MERN STACK PROJECT START</h2>
+            <h1 className='text-danger text-center my-5'> <b>Manage Items</b></h1>
             {/* Main container div to center and wrap the content */}
             <div className="container">
                 {/* Bootstrap row to divide the page into two columns */}
@@ -422,4 +425,4 @@ function Homepage() {
     )
 }
 
-export default Homepage
+export default Item
