@@ -1,4 +1,7 @@
-//Backend Project
+
+require('dotenv').config()
+// or import 'dotenv/config' // for esm//Backend Project
+console.log(process.env.PORT,"===>")
 //Node.js
 //Express.js
 //DB - mango Db
@@ -57,8 +60,8 @@ app.get("/api/get-all-item",getAllItems  )
 app.get("/health", (req, res) => {
   res.status(200).json({ message: "server is running" })
 })
-const PORT = 9090
+const PORT = process.env.PORT || 9000
 
 app.listen(PORT, () => {
-  console.log('server started')
+  console.log(`server is running on port ${PORT}`)
 })

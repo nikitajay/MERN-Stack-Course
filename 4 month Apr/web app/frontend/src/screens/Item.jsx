@@ -72,7 +72,7 @@ function Item() {
             console.log(data, "form submitted");
             // Sending a POST request to the backend API to create a new item
             const apiResponse = await axios
-                .post("http://localhost:9090/api/create-item", data)
+                .post(`${import.meta.env.VITE_API_URL}/create-item`, data)
                 // Logging success message when request is successful
                 .then(console.group("yes")).
                 // Logging error if the request fails
@@ -116,7 +116,7 @@ function Item() {
         try {
             // API Integration - fetch function
             // Calling the GET API to fetch all items from the backend
-            const apiResponse = await fetch("http://localhost:9090/api/get-all-item")
+            const apiResponse = await fetch(`${import.meta.env.VITE_API_URL}/get-all-item`)
             // Converting the API response to JSON format
             const responseData = await apiResponse.json()
             // Storing the fetched items array into itemData state
@@ -173,7 +173,9 @@ function Item() {
             // Logging the id of the item being deleted for debugging
             console.log(-id, "_id")
             // Sending a DELETE request to the backend API with the item id in the URL
-            const apiResponse = await axios.delete(`http://localhost:9090/apI/delete-item/${id}`)
+            const apiResponse = await axios.delete(
+            `${import.meta.env.VITE_API_URL}/delete-item/${id}`,
+        );
             // Closing the delete confirmation modal after successful deletion
             setShow(false)
             // Logging the API response to the console for debugging
@@ -358,7 +360,7 @@ function Item() {
                                     itemData &&
                                     itemData.map((each, index) => {
                                         return (
-                                            <tr>
+                                            <tr key={index + 1}>
 
                                                 {/* Displaying serial number (index + 1 to start from 1) */}
                                                 <td>{index + 1}</td>
