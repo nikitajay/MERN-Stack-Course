@@ -33,27 +33,34 @@ const cors = require('cors')
 const { connectDB } = require('./config/db')
 
 const{addItem,editItem,deleteItem ,getAllItems} = require('./controllers/itemControllers')
+const { login, register } = require('./controllers/authControllers')
+const { getDashboardcount } = require('./controllers/DashboardController')
 app.use(express.json())
 app.use(cors())
-
-
-
 connectDB()
 
 
+
+//Authentication API
+app.post("/apI/login",login)
+app.post("/apI/register",register)
 
 //API 1  - create Item
 
 app.post("/apI/create-item",addItem
 )
-
-
 //API 1  - Update Item
 app.put("/api/Update-item", editItem)
 //API 1  - Delete Item
 app.delete("/api/delete-item/:id",deleteItem  )
 //API 1  - get All Item
 app.get("/api/get-all-item",getAllItems  )
+
+//Dashboard API
+app.get("/apI/get-dashboard",getDashboardcount)
+
+
+
 
 
 //health ApI
