@@ -35,6 +35,7 @@ const { connectDB } = require('./config/db')
 const{addItem,editItem,deleteItem ,getAllItems} = require('./controllers/itemControllers')
 const { login, register } = require('./controllers/authControllers')
 const { getDashboardcount } = require('./controllers/DashboardController')
+const authMiddleware = require('./authMiddleware/authMiddleware')
 app.use(express.json())
 app.use(cors())
 connectDB()
@@ -47,7 +48,7 @@ app.post("/apI/register",register)
 
 //API 1  - create Item
 
-app.post("/apI/create-item",addItem
+app.post("/apI/create-item",authMiddleware,addItem
 )
 //API 1  - Update Item
 app.put("/api/Update-item", editItem)

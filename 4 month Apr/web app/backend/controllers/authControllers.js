@@ -47,14 +47,13 @@ const register = async (req, res) => {
 
 const login = async (req, res) => {
     try {
-        const { email, pass } = req.body
+        const { email, password } = req.body
 
-        const user = await Users.findOne({ email, password: pass })
+        const user = await Users.findOne({ email, password })
 
-        const token = jwt.sign({ userId: user._id, email: email },
+       const token = jwt.sign({ userId: user._id, email: email },
             process.env.JWT_SECRET_KEY,
             { expiresIn: "30d" })
-
 
 
         if (user) {
@@ -68,7 +67,9 @@ const login = async (req, res) => {
             })
         }
 
-
+// res.status(201).json({
+//     message: "Login Successful",
+// })
 
     } catch (error) {
 

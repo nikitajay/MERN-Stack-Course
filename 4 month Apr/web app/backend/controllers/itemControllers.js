@@ -1,8 +1,10 @@
 
 const Items = require("./..//Models/ItemsModels")
 
-const addItem = async (req,res) => {
+const addItem = async (req, res) => {
     try {
+
+        console.log(req.userId, "req===user")
         const { name, decription, sellingPrice, purchasePrice, quantity, unit } = req.body
 
         const savaitem = new Items(
@@ -12,7 +14,9 @@ const addItem = async (req,res) => {
                 sellingPrice,
                 purchasePrice,
                 quantity,
-                unit
+                unit,
+                userId: req.userId
+
             }
         )
 
@@ -25,7 +29,7 @@ const addItem = async (req,res) => {
 
 }
 
-const getAllItems = async (req,res) => {
+const getAllItems = async (req, res) => {
     try {
 
         const items = await Items.find()
@@ -37,7 +41,7 @@ const getAllItems = async (req,res) => {
     }
 
 }
-const deleteItem = async (req,res) => {
+const deleteItem = async (req, res) => {
     try {
         const { id } = req.params
 
@@ -51,7 +55,7 @@ const deleteItem = async (req,res) => {
     }
 
 }
-const editItem = async (req,res) => {
+const editItem = async (req, res) => {
     try {
 
     } catch (error) {
@@ -59,4 +63,4 @@ const editItem = async (req,res) => {
     }
 
 }
-module.exports= { addItem, getAllItems, deleteItem, editItem }
+module.exports = { addItem, getAllItems, deleteItem, editItem }
