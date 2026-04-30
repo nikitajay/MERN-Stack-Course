@@ -1,7 +1,7 @@
 
 require('dotenv').config()
 // or import 'dotenv/config' // for esm//Backend Project
-console.log(process.env.PORT,"===>")
+
 //Node.js
 //Express.js
 //DB - mango Db
@@ -34,7 +34,7 @@ const { connectDB } = require('./config/db')
 
 const{addItem,editItem,deleteItem ,getAllItems} = require('./controllers/itemControllers')
 const { login, register } = require('./controllers/authControllers')
-const { getDashboardcount } = require('./controllers/DashboardController')
+const { getDashboardcount, getDashboardCount } = require('./controllers/DashboardController')
 const authMiddleware = require('./authMiddleware/authMiddleware')
 app.use(express.json())
 app.use(cors())
@@ -51,14 +51,14 @@ app.post("/apI/register",register)
 app.post("/apI/create-item",authMiddleware,addItem
 )
 //API 1  - Update Item
-app.put("/api/Update-item", editItem)
+app.put("/api/Update-item",authMiddleware, editItem)
 //API 1  - Delete Item
-app.delete("/api/delete-item/:id",deleteItem  )
+app.delete("/api/delete-item/:id",authMiddleware,deleteItem  )
 //API 1  - get All Item
-app.get("/api/get-all-item",getAllItems  )
+app.get("/api/get-all-item", authMiddleware,getAllItems  )
 
 //Dashboard API
-app.get("/apI/get-dashboard",getDashboardcount)
+app.get("/apI/get-dashboard", authMiddleware,getDashboardCount)
 
 
 
@@ -68,7 +68,7 @@ app.get("/apI/get-dashboard",getDashboardcount)
 app.get("/health", (req, res) => {
   res.status(200).json({ message: "server is running" })
 })
-const PORT = process.env.PORT || 9000
+const PORT = process.env.PORT || 1010
 
 app.listen(PORT, () => {
   console.log(`server is running on port ${PORT}`)

@@ -1,23 +1,16 @@
-//users list table in database
 const mongoose = require('mongoose')
 
-
-const UsersSchema = new mongoose.Schema(
+const UserSchema = new mongoose.Schema(
   {
-    //user name
     name: String,
-
-    city : String,
-
+    city: String,
     mobileNO: Number,
-
-    //user email
-     email: String,
-
-     //user Password
-      Password: String,
+    email: String,
+    Password: String,
   }
 )
 
-const Users = mongoose.model("Users", UsersSchema)
-module.exports = Users
+// 🔥 IMPORTANT FIX
+const User = mongoose.models.User || mongoose.model("User", UserSchema)
+
+module.exports = User

@@ -1,55 +1,82 @@
-// import React from 'react'
+ // Bootstrap CSS - gives us ready made styles like buttons, cards, forms
+import "bootstrap/dist/css/bootstrap.min.css"
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter, Routes, Route,Link } from 'react-router-dom';
-import Login from './screens/login';
-import Register from './screens/Register';
-import Item from './screens/Item';
-import Dashboard from './screens/Dashboard';
+// BrowserRouter - wraps the whole app so routing works
+// Routes - container that holds all Route definitions
+// Route - defines one page path like "/dashboard"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 
+// ToastContainer - shows popup notifications (success/error messages)
+import { ToastContainer } from "react-toastify"
 
-import { ToastContainer, toast } from 'react-toastify';
+// Importing all page components
+import Login from "./screens/Login"
+import Register from "./screens/Register"
+import Item from "./screens/Item"
+import Dashboard from "./screens/Dashboard"
 
-import AuthNavBar from './components/AuthNavBar';
+// AuthNavBar - the top navigation bar (hides on login/register pages)
+import AuthNavBar from "./components/AuthNavBar"
+
+// ProtectedRoute - blocks page if user is not logged in
+// PublicRoute - blocks login/register page if user is already logged in
+import { ProtectedRoute, PublicRoute } from "./components/ProtectedRoute"
+
 const App = () => {
-  console.log(import.meta.env.VITE_API_URL,"===>");
   return (
-   <BrowserRouter>
-    <div >  
-      {/* ToastContainer renders the toast notification popup on the screen */}
-                <ToastContainer
-                    // Setting the default position of all toasts to top-right
-                    position="top-right"
-                    // Auto closing toast after 5000 milliseconds
-                    autoClose={5000}
-                    // Showing the progress bar inside the toast
-                    hideProgressBar={false}
-                    // Newer toasts will not appear on top of older ones
-                    newestOnTop={false}
-                    // Disabling close on click for the toast
-                    closeOnClick={false}
-                    // Disabling right-to-left layout for the toast
-                    rtl={false}
-                    // Toast will pause when the browser window loses focus
-                    pauseOnFocusLoss
-                    // Allowing the toast to be draggable by the user
-                    draggable
-                    // Toast will pause when user hovers over it
-                    pauseOnHover
-                    // Setting the toast theme to light
-                    theme="light"
-                />
-    
-         <AuthNavBar/>
-      <Routes>
-        <Route path='/' element={<Login/>} />  
-        
-        <Route path='/register' element={<Register/>} />
-        <Route path='/Item' element={<Item/>} />
-        <Route path='/dashboard' element={<Dashboard/>} />
-      </Routes>
-    </div>
-   </BrowserRouter>
+    // BrowserRouter wraps everything so all pages can use routing
+    <BrowserRouter>
+      <div>
+
+        {/* ToastContainer shows popup messages at top-right corner
+            autoClose 3000 means popup disappears after 3 seconds */}
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          theme="light"
+        />
+
+        {/* AuthNavBar is shown on all pages except login and register */}
+        <AuthNavBar />
+
+        {/* Routes holds all the page paths of our app */}
+        <Routes>
+
+          {/* "/" is the login page
+              Wrapped in PublicRoute so logged in users go to dashboard instead */}
+          <Route path="/" element={<PublicRoute><Login /></PublicRoute>} />
+
+          {/* "/register" is the register page
+              Wrapped in PublicRoute so logged in users go to dashboard instead */}
+          <Route path="/register" element={<PublicRoute><Register /></PublicRoute>} />
+
+          {/* "/item" is protected - only logged in users can see it
+              If no token, ProtectedRoute sends user back to login */}
+          <Route
+            path="/item"
+            element={
+              <ProtectedRoute>
+                <Item />
+              </ProtectedRoute>
+            }
+          />
+
+          {/* "/dashboard" is protected - only logged in users can see it
+              If no token, ProtectedRoute sends user back to login */}
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+
+        </Routes>
+
+      </div>
+    </BrowserRouter>
   )
 }
 

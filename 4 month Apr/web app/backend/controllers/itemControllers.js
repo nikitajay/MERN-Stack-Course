@@ -25,6 +25,7 @@ const addItem = async (req, res) => {
         res.status(201).json({ message: "item created", data: savaitem })
     } catch (error) {
         console.log(error)
+        res.status(500).json({ message: "Error creating item", error: error.message })
     }
 
 }
@@ -32,12 +33,13 @@ const addItem = async (req, res) => {
 const getAllItems = async (req, res) => {
     try {
 
-        const items = await Items.find()
+        const items = await Items.find({ userId: req.userId })
 
         res.status(200).json({ message: "GET All Item List", data: items })
 
     } catch (error) {
-        console.log
+        console.log(error)
+        res.status(500).json({ message: "Error fetching items", error: error.message })
     }
 
 }
@@ -52,14 +54,27 @@ const deleteItem = async (req, res) => {
 
     } catch (error) {
         console.log(error)
+        res.status(500).json({ message: "Error fetching items", error: error.message })
     }
 
 }
 const editItem = async (req, res) => {
     try {
 
+        const{id, name, decription, sellingPrice, purchasePrice, quantity, unit} = req.body
+        const updateItem = await Items.findByIdAndUpdate(id, {
+            name,
+            decription,
+            sellingPrice,
+            purchasePrice,
+            quantity,
+            unit
+        }, { new: true })
+        res.status(200).json({ message: "Item Updated", updateItem: updateItem })
+
     } catch (error) {
-        console.log
+        console.log(error)
+        res.status(500).json({ message: "Error fetching items", error: error.message })
     }
 
 }
